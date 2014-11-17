@@ -1,27 +1,16 @@
 <div class="off-canvas-wrap" data-offcanvas>
-  
+
   <!-- If the contents of the .inner-wrap isn't the main content of the page, use another approripate sectioning element instead -->
   <div class="inner-wrap">
   	<a class="exit-off-canvas"></a>
-
+	
   	<nav class="tab-bar">
-	  <section class="left-small">
-        <a class="left-off-canvas-toggle" href="#"><span class="">  <i class="fi-plus"></i></span></a>
-      </section>
 	  <div class="middle tab-bar-section">AMT</div>
 	  <section class="right-small">
-		<a class="right-off-canvas-toggle fi-torso" href="#"><span class=""></span></a>
+	  	<i class="right-off-canvas-toggle fi-torso"></i>
 	  </section>
 	</nav>
-
-  	<nav class="left-off-canvas-menu" >
-	  	<ul class="off-canvas-list">
-	  		<li><label for="">Tarea X</label></li>
-	  		<li><a href="#">Resumen</a></li>
-	  		<li><label for="">Herramientas</label></li>
-	  		<li><a href="#">Item 1</a></li>
-		</ul>
-	</nav>
+	
   	<nav class="right-off-canvas-menu">
   		<ul class="off-canvas-list">
   			<li><label for="">Usuario</label></li>
@@ -31,12 +20,15 @@
 	  		<li><a href="#">Item 1</a></li>
   		</ul>
   	</nav>
-	
-	<section class="main-section">
-		<p>Hello World!</p>
 
+	<%= render "left_nav_bar" %>
+
+	<section class="main-section large-10 columns">
+		<h1>Hello</h1>
+		<p>Hello World!</p>
+		<p>Hello</p>		
 	</section>
-	
+
   </div>
-  
+ 
 </div>
