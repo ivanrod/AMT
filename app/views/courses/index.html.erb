@@ -16,15 +16,22 @@
   			<li><label for="">Usuario</label></li>
   			<li><a href="#">Perfil</a></li>
   			<li><a href="#">Mis cursos</a></li>
+  			<li><%= link_to("Salir", destroy_user_session_path, :class => "button radius", method: 'delete') %></li>
   			<li><label for="">Estadísticas</label></li>
 	  		<li><a href="#">Item 1</a></li>
   		</ul>
   	</nav>
 
+		<% if flash[:notice] %>
+		<div data-alert class="alert-box success radius large-5 colums">
+		   <p><%= flash[:notice] %></p> 
+		</div>
+		<% end %>
+		
 	<%= render "left_nav_bar" %>
 	
 	<%= render "courses" %>
-	
+
   </div>
  
 </div>

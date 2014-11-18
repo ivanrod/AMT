@@ -5,17 +5,18 @@ class CoursesController < ApplicationController
 
 	def new
 		@course = Course.new
-		@action = "Create course..."
+		@action = "Crear curso..."
 	end
 
 	def create
 		@course = Course.create(course_params)
+		@course.users.push(current_user)
 		if @course.save
-			flash[:notice] = "Congratulations, your course has been created"
+			flash[:notice] = "Felicidades, tu curso ha sido creado."
 			redirect_to(courses_path) 
 		else
 			@errors	= @course.errors.full_messages
-			flash[:error] = "Sorry, your course has not been created"
+			flash[:error] = "Lo siento, no se ha podido crear tu curso"
             render 'new'
 		end			
 	end
@@ -33,7 +34,7 @@ class CoursesController < ApplicationController
 			redirect_to(courses_path)
 		else
 			@errors	= @course.errors.full_messages
-			flash[:error] = "Sorry, your course has not been edited"
+			flash[:error] = "Lo siento, no se ha podido editar tu curso"
       render 'edit'
     end
 	end
@@ -44,7 +45,7 @@ class CoursesController < ApplicationController
 			redirect_to(courses_path)
 		else
 			@errors	= @course.errors.full_messages
-			flash[:error] = "Sorry, your course has not been deleted"
+			flash[:error] = "Lo siento, no se ha podido borrar tu curso"
 		end
 	end
 

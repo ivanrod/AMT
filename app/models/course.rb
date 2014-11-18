@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-	#has_and_belongs_to_many :users
+	has_and_belongs_to_many :users
 
 	validates :name, presence: true
 	validate :start_date_is_today_or_after

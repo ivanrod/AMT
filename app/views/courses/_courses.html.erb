@@ -25,11 +25,7 @@
 		  </tbody>
 		</table>
 		
-		<% if flash[:notice] %>
-		<div data-alert class="alert-box success radius large-5 colums">
-		   <p><%= flash[:notice] %></p> 
-		</div>
-		<% end %>
+
 
 		<%= link_to("Nuevo curso...", new_course_path, :class => "button radius") %>	
 	</section>
