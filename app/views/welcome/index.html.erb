@@ -1,5 +1,16 @@
 <h1>AMT</h1>
 <%= link_to("Cursos", courses_path, :class => "button radius") %>
+
+<% if signed_in? %>
+<p>Sesión iniciada como <%= current_user.email %></p>
+<%= link_to("Salir", destroy_user_session_path, :class => "button radius", method: 'delete') %>
+<% else %>
 <%= link_to("Registrarse", new_user_registration_path, :class => "button radius") %>
 <%= link_to("Log in", new_user_session_path, :class => "button radius") %>
+<% end %>
+
+<% if flash[:notice] %>
+	<div data-alert class="alert-box success radius large-5 colums">
+<p><%= flash[:notice] %></p> 
+<% end %>
 
