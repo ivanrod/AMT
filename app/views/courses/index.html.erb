@@ -22,43 +22,9 @@
   	</nav>
 
 	<%= render "left_nav_bar" %>
-
-	<section class="main-section large-10 columns">
-		<h1>Cursos</h1>	
-
-		<table>
-		  <thead>
-		    <tr>
-		      <th width="200">Curso</th>
-		      <th>Horas/semana</th>
-		      <th width="150">Fecha de inicio</th>
-		      <th width="150">Fecha de fin</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		  	<% @courses.each do |course| %>
-		    <tr>
-		      <td><%= course.name %></td>
-		      <td><%= course.estimated_hours %></td>
-		      <td><%= course.start_date %></td>
-		      <td><%= course.end_date %></td>
-		      <td><%= link_to("Editar", edit_course_path(course), :class => "button radius tiny") %></td>
-		      <td><%= link_to("Borrar", course_path(course), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
-
-		    </tr>
-		    <% end %>
-		  </tbody>
-		</table>
-		
-		<% if flash[:notice] %>
-		<div data-alert class="alert-box success radius large-5 colums">
-		   <p><%= flash[:notice] %></p> 
-		</div>
-		<% end %>
-
-		<%= link_to("Nuevo curso...", new_course_path, :class => "button radius") %>	
-	</section>
-
+	
+	<%= render "courses" %>
+	
   </div>
  
 </div>

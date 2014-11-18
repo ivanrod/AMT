@@ -1,5 +1,4 @@
 <h1>AMT</h1>
-<%= link_to("Cursos", courses_path, :class => "button radius") %>
 
 <% if signed_in? %>
 <p>Sesión iniciada como <%= current_user.email %></p>
@@ -11,6 +10,6 @@
 
 <% if flash[:notice] %>
 	<div data-alert class="alert-box success radius large-5 colums">
-<p><%= flash[:notice] %></p> 
+	<p><%= flash[:notice] %></p> 
 <% end %>
 

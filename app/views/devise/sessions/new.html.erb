@@ -4,9 +4,16 @@
 
 <fieldset>
   <legend>Identifícate</legend>
-<h2>Log in</h2>
+  <h2>Log in</h2>
+  
+<% flash.each do |name, msg| %>
+<div data-alert class="alert-box alert radius">
+<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+</div>
+<% end %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
