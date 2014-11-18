@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20141118191831) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
+    t.text     "description"
+    t.string   "platform"
     t.integer  "estimated_hours"
     t.date     "start_date"
     t.date     "end_date"

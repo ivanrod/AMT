@@ -3,6 +3,10 @@
 	<legend>Nuevo curso</legend>
 <%= f.label :name %>
 <%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :platform %>
+<%= f.select :platform, ["Coursera","Udemy","edX","Udacity","Otros"] %>
 <%= f.label :estimated_hours %>
 <%= f.number_field :estimated_hours, :step=>'any' %>
 <%= f.label :start_date %>
