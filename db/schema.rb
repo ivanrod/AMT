@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20141117120819) do
   create_table "courses", force: true do |t|
     t.string   "name"
     t.integer  "estimated_hours"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
