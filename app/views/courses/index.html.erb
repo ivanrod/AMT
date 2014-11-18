@@ -42,8 +42,8 @@
 		      <td><%= course.estimated_hours %></td>
 		      <td><%= course.start_date %></td>
 		      <td><%= course.end_date %></td>
-		      <td><%= link_to("Editar", edit_course_path(course), :class => "button round tiny") %></td>
-		      <td><%= link_to("Borrar", course_path(course), :class => "button round tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
+		      <td><%= link_to("Editar", edit_course_path(course), :class => "button radius tiny") %></td>
+		      <td><%= link_to("Borrar", course_path(course), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
 
 		    </tr>
 		    <% end %>
@@ -56,7 +56,7 @@
 		</div>
 		<% end %>
 
-		<%= link_to("Nuevo curso...", new_course_path, :class => "button round") %>	
+		<%= link_to("Nuevo curso...", new_course_path, :class => "button radius") %>	
 	</section>
 
   </div>
