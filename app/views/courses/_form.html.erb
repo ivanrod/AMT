@@ -11,10 +11,10 @@
 <%= f.number_field :estimated_hours, :step=>'any' %>
 <%= f.label :start_date %>
 <div class="row">
-<%= f.date_select(:start_date, default: Time.now, :class => "large-2 colums" ) %>
+<%= f.text_field(:start_date, :class => "large-2 colums" ) %>
 </div>
 <%= f.label :end_date %>
-<%= f.date_select(:end_date, default: Time.now + 1 ) %>
+<%= f.text_field(:end_date) %>
 <br/>
 <%= f.submit @action, :class => "button radius" %>
 

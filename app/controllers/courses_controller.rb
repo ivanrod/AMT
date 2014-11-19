@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 	def index
-		@courses = Course.all
+		@courses = current_user.courses
 	end
 
 	def new
@@ -51,6 +51,6 @@ class CoursesController < ApplicationController
 
 	private
 	def course_params
-		params.require(:course).permit(:name, :estimated_hours, :start_date, :end_date)
+		params.require(:course).permit(:name, :estimated_hours, :start_date, :end_date, :description, :platform)
 	end
 end

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require foundation
 $(document).foundation();
 
@@ -20,4 +21,9 @@ $(function(){ $(document).foundation(); });
 $(window).on("load resize", function(){
   height = Math.max($('.inner-wrap').height(), $(this).height());
   $('.left-off-canvas-menu').height(height);
+});
+
+$(function(){
+	$('#course_start_date').datepicker({ dateFormat: 'D, dd M yy' });
+	$('#course_end_date').datepicker({ dateFormat: 'D, dd M yy' });
 });

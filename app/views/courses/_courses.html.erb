@@ -1,10 +1,15 @@
 	<section class="main-section large-10 columns">
 		<h1>Cursos</h1>	
-
+		<% if flash[:notice] %>
+		<div data-alert class="alert-box success radius large-offset-3 large-5 colums">
+		   <p><%= flash[:notice] %></p> 
+		</div>
+		<% end %>
 		<table>
 		  <thead>
 		    <tr>
 		      <th width="200">Curso</th>
+		      <th>Plataforma</th>
 		      <th>Horas/semana</th>
 		      <th width="150">Fecha de inicio</th>
 		      <th width="150">Fecha de fin</th>
@@ -14,6 +19,7 @@
 		  	<% @courses.each do |course| %>
 		    <tr>
 		      <td><%= course.name %></td>
+		      <td><%= course.platform %></td>
 		      <td><%= course.estimated_hours %></td>
 		      <td><%= course.start_date %></td>
 		      <td><%= course.end_date %></td>
