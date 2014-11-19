@@ -1,6 +1,18 @@
 class CoursesController < ApplicationController
+	layout "nav_amt"
 	def index
+	end
+
+	def my_courses
 		@courses = current_user.courses
+		@title = "Mis cursos"
+		render 'courses'
+	end
+
+	def all_courses
+		@courses = Course.all
+		@title = "Todos los cursos"
+		render 'courses'
 	end
 
 	def new
@@ -13,7 +25,7 @@ class CoursesController < ApplicationController
 		@course.users.push(current_user)
 		if @course.save
 			flash[:notice] = "Felicidades, tu curso ha sido creado."
-			redirect_to(courses_path) 
+			redirect_to(my_courses_path) 
 		else
 			@errors	= @course.errors.full_messages
 			flash[:error] = "Lo siento, no se ha podido crear tu curso"
@@ -42,7 +54,7 @@ class CoursesController < ApplicationController
 	def destroy
 		@course = Course.find(params[:id])
 		if @course.destroy
-			redirect_to(courses_path)
+			redirect_to(my_courses_path)
 		else
 			@errors	= @course.errors.full_messages
 			flash[:error] = "Lo siento, no se ha podido borrar tu curso"

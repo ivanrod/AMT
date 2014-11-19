@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "AMT" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", :defer => "defer" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="off-canvas-wrap" data-offcanvas>
+
+  <!-- If the contents of the .inner-wrap isn't the main content of the page, use another approripate sectioning element instead -->
+      <div class="inner-wrap">
+        <a class="exit-off-canvas"></a>
+      
+        <nav class="tab-bar">
+        <div class="middle tab-bar-section"><%= link_to("AMT", root_path) %></div>
+        <section class="right-small">
+          <i class="right-off-canvas-toggle fi-torso"></i>
+        </section>
+      </nav>
+      
+        <nav class="right-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label for="">Usuario</label></li>
+            <li><a href="#">Perfil</a></li>
+            <li><%= link_to("Mis cursos", my_courses_path) %></li>
+            <li><%= link_to("Salir", destroy_user_session_path, :class => "button radius", method: 'delete') %></li>
+            <li><label for="">Estadísticas</label></li>
+            <li><a href="#">Item 1</a></li>
+          </ul>
+        </nav>
+        
+        <nav class="icon-bar large-vertical five-up large-1 columns" role="navigation">
+          <%= link_to dashboard_path, :class => "item" do %>
+          <i class="fi-home"></i>
+            <label>Dashboard</label>
+          <% end %>       
+          <a class="item">
+            <i class="fi-graph-pie"></i>
+            <label>Resumen</label>
+          </a>
+          <a class="item">
+            <i class="fi-info"></i>
+            <label>Info</label>
+          </a>
+          <a class="item">
+            <i class="fi-wrench"></i>
+            <label>Herramientas</label>
+          </a>
+          <a class="item">
+            <i class="fi-list-bullet"></i>
+            <label>Tarea</label>
+          </a>
+
+        </nav>
+
+        <%= yield %>
+
+        </div>
+      </div>
+    
+  </body>
+</html>

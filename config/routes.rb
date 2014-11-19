@@ -6,7 +6,11 @@ Amt::Application.routes.draw do
 
   root 'welcome#index'
 
-  get 'courses' => 'courses#index'
+  get 'dashboard' => 'courses#index'
+
+  get 'my_courses' => "courses#my_courses"
+
+  get 'all_courses' => "courses#all_courses"
 
   resources :courses
   

@@ -1,5 +1,5 @@
 	<section class="main-section large-10 columns">
-		<h1>Cursos</h1>	
+		<h1><%= @title || "Cursos" %></h1>	
 		<% if flash[:notice] %>
 		<div data-alert class="alert-box success radius large-offset-3 large-5 colums">
 		   <p><%= flash[:notice] %></p> 

@@ -7,7 +7,7 @@
 <div class="large-9 columns">
   <ul class="button-group right">
   	<% if signed_in? %>
-	<li><%= link_to("Cursos", courses_path, :class => "button radius") %></li>
+	<li><%= link_to("Comenzar", dashboard_path, :class => "button radius") %></li>
 	<li><%= link_to("Salir", destroy_user_session_path, :class => "button radius", method: 'delete') %></li>
 	<% else %>
 	<li><%= link_to("Registrarse", new_user_registration_path, :class => "button radius") %></li>
