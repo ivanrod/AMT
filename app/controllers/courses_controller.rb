@@ -1,6 +1,9 @@
 class CoursesController < ApplicationController
 	layout "nav_amt"
 	def index
+		if !signed_in?
+			redirect_to(new_user_session_path)
+		end
 	end
 
 	def my_courses
@@ -13,6 +16,10 @@ class CoursesController < ApplicationController
 		@courses = Course.all
 		@title = "Todos los cursos"
 		render 'courses'
+	end
+
+	def show
+		@course = Course.find(params[:id])
 	end
 
 	def new
@@ -63,6 +70,10 @@ class CoursesController < ApplicationController
 
 	private
 	def course_params
-		params.require(:course).permit(:name, :estimated_hours, :start_date, :end_date, :description, :platform)
+		params.require(:course).permit(:id, :name, :estimated_hours, :start_date, :end_date, :description, :platform)
+	end
+
+	def course_id_params
+		params.require(:course).permit(:id)
 	end
 end

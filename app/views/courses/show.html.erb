@@ -1,0 +1,13 @@
+<div class="large-10 columns">
+  <h3><%= @course.name %></h3>
+  
+  <ul>
+     <li><b>Descripción:</b> <%= @course.description %></li>
+     <li><b>Plataforma:</b> <%= @course.platform %></li>
+     <li><b>Horas/Semana:</b> <%= @course.estimated_hours %></li>
+     <li><b>Fecha de inicio:</b> <%= @course.start_date %></li>
+     <li><b>Fecha de fin:</b> <%= @course.end_date %></li>   
+  </ul>
+
+  <%= link_to("Editar", edit_course_path(@course), :class => "button radius") %>
+</div>

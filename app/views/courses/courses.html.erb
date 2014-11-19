@@ -17,16 +17,20 @@
 		  </thead>
 		  <tbody>
 		  	<% @courses.each do |course| %>
+		  	
 		    <tr>
-		      <td><%= course.name %></td>
+
+		      <td><%= link_to(course.name, course_path(course)) %></td>
 		      <td><%= course.platform %></td>
 		      <td><%= course.estimated_hours %></td>
 		      <td><%= course.start_date %></td>
 		      <td><%= course.end_date %></td>
+		      <% if @title == "Mis cursos" %>
 		      <td><%= link_to("Editar", edit_course_path(course), :class => "button radius tiny") %></td>
 		      <td><%= link_to("Borrar", course_path(course), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
-
+			  <% end %>
 		    </tr>
+		    
 		    <% end %>
 		  </tbody>
 		</table>
