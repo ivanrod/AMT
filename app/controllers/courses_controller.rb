@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
 		else
 			@errors	= @course.errors.full_messages
 			flash[:error] = "Lo siento, no se ha podido crear tu curso"
-            render 'new'
+        render 'new'
 		end			
 	end
 
@@ -50,7 +50,7 @@ class CoursesController < ApplicationController
 		@course.update_attributes(course_params)
 
 		if @course.update_attributes(course_params)
-			redirect_to(courses_path)
+			redirect_to(my_courses_path)
 		else
 			@errors	= @course.errors.full_messages
 			flash[:error] = "Lo siento, no se ha podido editar tu curso"

@@ -1,0 +1,22 @@
+<div class="large-8 columns">
+	<div class="large-6 columns">
+<% if flash[:error] %>
+<div data-alert class="alert-box alert radius">
+   <p><%= flash[:error] %></p> 
+<% @errors.each do |error_message| %>
+   <li><p><%= error_message %></p> </li>
+<% end %>
+</div>
+<% end %>
+<% if signed_in? %>
+<%= render "form" %>
+
+<% else %>
+	<div data-alert class="alert-box alert radius">
+	<h4>Debes estar logueado para crear un nuevo curso</h4>
+	</div>
+	<%= link_to("Registrarse", new_user_registration_path, :class => "button radius") %>
+	<%= link_to("Log in", new_user_session_path, :class => "button radius right") %>
+<% end %>
+</div>
+</div>

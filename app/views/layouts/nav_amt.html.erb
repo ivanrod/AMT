@@ -10,6 +10,7 @@
 
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", :defer => "defer" %>
+    <%= javascript_include_tag params[:controller], :defer => "defer" %>
     <%= csrf_meta_tags %>
   </head>
 

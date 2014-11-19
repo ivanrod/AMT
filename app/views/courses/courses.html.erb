@@ -5,7 +5,7 @@
 		   <p><%= flash[:notice] %></p> 
 		</div>
 		<% end %>
-		<table>
+		<table class="width-100 custom-table responsive">
 		  <thead>
 		    <tr>
 		      <th width="200">Curso</th>
@@ -20,12 +20,19 @@
 		  	
 		    <tr>
 
-		      <td><%= link_to(course.name, course_path(course)) %></td>
+		      <td><%= link_to(course.name, course_path(course)) %>
+				<ul>
+					<% course.tasks.each do |task| %>
+						<li><%= task.name %></li>
+					<% end %>
+				</ul>
+		      </td>
 		      <td><%= course.platform %></td>
 		      <td><%= course.estimated_hours %></td>
 		      <td><%= course.start_date %></td>
 		      <td><%= course.end_date %></td>
 		      <% if @title == "Mis cursos" %>
+		      <td><%= link_to("Nueva tarea", new_course_task_path(course), :class => "button radius tiny") %></td>
 		      <td><%= link_to("Editar", edit_course_path(course), :class => "button radius tiny") %></td>
 		      <td><%= link_to("Borrar", course_path(course), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
 			  <% end %>

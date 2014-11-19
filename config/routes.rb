@@ -12,7 +12,9 @@ Amt::Application.routes.draw do
 
   get 'all_courses' => "courses#all_courses"
 
-  resources :courses
+  resources :courses do 
+    resources :tasks
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

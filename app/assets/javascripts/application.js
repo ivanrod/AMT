@@ -23,7 +23,4 @@ $(window).on("load resize", function(){
   $('.left-off-canvas-menu').height(height);
 });
 
-$(function(){
-	$('#course_start_date').datepicker({ dateFormat: 'D, dd M yy' });
-	$('#course_end_date').datepicker({ dateFormat: 'D, dd M yy' });
-});
+

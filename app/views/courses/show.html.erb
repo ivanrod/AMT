@@ -8,6 +8,11 @@
      <li><b>Fecha de inicio:</b> <%= @course.start_date %></li>
      <li><b>Fecha de fin:</b> <%= @course.end_date %></li>   
   </ul>
-
   <%= link_to("Editar", edit_course_path(@course), :class => "button radius") %>
+  <h4>Tareas:</h4>
+  <% @course.tasks.each do |task| %>
+    <li><%= task.name %></li>
+  <% end %>
+  <%= link_to("Nueva tarea", new_course_task_path(@course), :class => "button radius") %>
+  
 </div>
