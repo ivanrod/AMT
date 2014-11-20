@@ -34,6 +34,16 @@ class TasksController < ApplicationController
 		end
 	end
 
+	def add_time
+		if request.xhr?
+			@data = Task.update_minutes_dedicated(request.body.read)
+			Task.find(@data[1]).update_attributes(minutes_dedicated: @data[0])
+			render json: "Bien"
+		else
+			render json: "Mal"
+		end
+	end
+
 	def task_params
 		params.require(:task).permit(:name, :description, :deadline, :task_type)
 	end
