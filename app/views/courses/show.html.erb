@@ -11,29 +11,50 @@
   <%= link_to("Editar", edit_course_path(@course), :class => "button radius") %>
   <h4>Tareas:</h4>
 
-<table class="width-100 custom-table responsive">
-      <thead>
-        <tr>
-          <th width="200">Tarea</th>
-          <th>Descripción</th>
-          <th>Tipo</th>
-          <th width="150">Deadline</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @course.tasks.each do |task| %>
+    <div class="large-12 colums custom-table responsive">
+      <div class="pricing-table">
+      <ul class="inline-list">
+        <li class="bullet-item large-1 small-1 colums" width="200"><b>Tarea</b></li>
+          <li class="bullet-item large-2 small-1 colums"><b>Descripción</b></li>
+          <li class="bullet-item large-1 small-1 colums"><b>Tipo</b></li>
+          <li class="bullet-item large-2 small-1 colums" width="150"><b>Deadline</b></li>
+          
+      </ul>
+      
+
+      <% @course.tasks.each do |task| %>
+      <div class="pricing-table">
+        <ul class="inline-list">
+          <li class="bullet-item large-1 small-1 colums"><%= task.name %></li>
+            <li class="description large-2 small-1 colums" width="150"><%= task.description %></li>
+            <li class="bullet-item large-1 small-1 colums" width="150"><%= task.task_type %></li>
+            <li class="bullet-item large-2 small-1 colums" width="150"><%= task.deadline %></li>
+            <li class="bullet-item large-2 small-1 colums"><%= link_to("Borrar", course_task_path(@course, task), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></li>
+            <li class="bullet-item large-2 small-1 colums time-input-button"><a href="#" class="button radius tiny">Añadir tiempo empleado</a></li>
+            <li class="bullet-item large-2 small-1 colums"><a href="" class="button radius tiny">Comenzar pomodoro</a></li>
+
+
+        </ul>
+
+            <div class="row time-input" style="display:none">
         
-        <tr>
-          <td><%= task.name %></td>
-          <td><%= task.description %></td>
-          <td><%= task.task_type %></td>
-          <td><%= task.deadline %></td>
-          <td><%= link_to("Borrar", course_task_path(@course, task), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
-        </tr>
-        
-        <% end %>
-      </tbody>
-    </table>
+            <div class="large-2 columns">
+              <label>Horas
+                <input type="number" name="quantity" min="0" max="24" value="0" placeholder="Horas" />
+              </label>
+            </div>
+            <div class="large-2 columns left">
+              <label>Minutos
+                <input type="number" name="quantity" min="0" max="60" value="45" placeholder="Minutos" />
+              </label>
+            </div>
+          </div>  
+
+      </div>
+
+      <% end %>
+      </div>
+    </div>
 
   <%= link_to("Nueva tarea", new_course_task_path(@course), :class => "button radius") %>
   
