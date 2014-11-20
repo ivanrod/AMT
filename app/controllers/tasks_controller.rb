@@ -23,6 +23,17 @@ class TasksController < ApplicationController
     end
 	end
 
+	def destroy
+		@course = Course.find(params[:course_id])
+		@task = Task.find(params[:id])
+		if @task.destroy
+			redirect_to(course_path(@course))
+		else
+			@errors = @course.errors.full_messages
+			flash[:error] = "Lo siento, no se ha podido borrar tu curso"
+		end
+	end
+
 	def task_params
 		params.require(:task).permit(:name, :description, :deadline, :task_type)
 	end

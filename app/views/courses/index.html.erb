@@ -1,2 +1,38 @@
+<div class="large-9 colums">
+<div class="large-3 medium-6 small-12 columns">
+    <div class="stats border">
+        <div class="left">
+            Cursos
+            <h3><%= current_user.courses.size %></h3>
+        </div>
+        <i class="fi-price-tag right sales"></i>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="large-3 medium-6 small-12 columns">
+    <div class="stats border">
+        <div class="left">
+            Tareas
+            <h3><%= current_user.courses.size %></h3>
+        </div>
+        <i class="fi-price-tag right sales"></i>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="large-3 medium-6 small-12 columns">
+    <div class="stats border">
+        <div class="left">
+            Siguiente deadline
+            <h3><%= current_user.courses.size %></h3>
+        </div>
+        <i class="fi-price-tag right sales"></i>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
 <%= link_to("Mis cursos", my_courses_path, :class => "button radius") %>
 <%= link_to("Todos los cursos", all_courses_path, :class => "button radius") %>
+
+</div>

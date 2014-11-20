@@ -10,9 +10,31 @@
   </ul>
   <%= link_to("Editar", edit_course_path(@course), :class => "button radius") %>
   <h4>Tareas:</h4>
-  <% @course.tasks.each do |task| %>
-    <li><%= task.name %></li>
-  <% end %>
+
+<table class="width-100 custom-table responsive">
+      <thead>
+        <tr>
+          <th width="200">Tarea</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+          <th width="150">Deadline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @course.tasks.each do |task| %>
+        
+        <tr>
+          <td><%= task.name %></td>
+          <td><%= task.description %></td>
+          <td><%= task.task_type %></td>
+          <td><%= task.deadline %></td>
+          <td><%= link_to("Borrar", course_task_path(@course, task), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
+        </tr>
+        
+        <% end %>
+      </tbody>
+    </table>
+
   <%= link_to("Nueva tarea", new_course_task_path(@course), :class => "button radius") %>
   
 </div>
