@@ -1,4 +1,5 @@
 <div class="large-10 columns">
+
   <h3><%= @course.name %></h3>
   
   <ul>
@@ -37,24 +38,44 @@
               <% end %>
             </li>
             <li class="bullet-item large-1 small-1 colums time-input-button has-tip" data-tooltip aria-haspopup="true" title="Añadir tiempo de trabajo"><a href="#" class="button radius tiny"><i class="fi-plus"></i></a></li>
-            <li class="bullet-item large-1 small-1 colums has-tip" data-tooltip aria-haspopup="true" title="Comenzar pomodoro" ><a href="#" class="button radius tiny"><i class="fi-wrench"></i></a></li>
+            <li class="bullet-item large-1 small-1 colums pomodoro-button has-tip" data-tooltip aria-haspopup="true" title="Comenzar pomodoro" ><a href="#" class="button radius tiny"><i class="fi-wrench"></i></a></li>
 
         </ul>
-
+            <!-- Añadir tiempo dedicado-->
             <div class="row time-input" style="display:none">
         
-            <div class="large-2 columns">
-              <label>Horas
-                <input id="hoursInput<%= task.id %>" type="number" name="quantity" min="0" max="24" value="0" placeholder="Horas" />
-              </label>
+              <div class="large-2 columns">
+                <label>Horas
+                  <input id="hoursInput<%= task.id %>" type="number" name="quantity" min="0" max="24" value="0" placeholder="Horas" />
+                </label>
+              </div>
+              <div class="large-2 columns left">
+                <label>Minutos
+                  <input id="minutesInput<%= task.id %>" type="number" name="quantity" min="0" max="60" value="0" placeholder="Minutos" />
+                </label>
+            </div>  
+             <div data-input="<%= task.id %>" class="bullet-item large-1 small-1 colums time-input-button time-input-button-plus has-tip" data-tooltip aria-haspopup="true" title="Añadir tiempo de trabajo"><a data-input="<%= task.id %>" href="#" class="button radius tiny"><i data-input="<%= task.id %>" class="fi-plus"></i></a></div>
+          </div>
+          <!-- Popup pomodoro -->
+          <div class="row pomodoro-div" style="display:none">
+            <div class="large-4 columns">    
+            <div class="clock" style="margin:2em;"></div>
+            <div class="message"></div>
             </div>
-            <div class="large-2 columns left">
-              <label>Minutos
-                <input id="minutesInput<%= task.id %>" type="number" name="quantity" min="0" max="60" value="0" placeholder="Minutos" />
-              </label>
-          </div>  
-           <div data-input="<%= task.id %>" class="bullet-item large-1 small-1 colums time-input-button time-input-button-plus has-tip" data-tooltip aria-haspopup="true" title="Añadir tiempo de trabajo"><a data-input="<%= task.id %>" href="#" class="button radius tiny"><i data-input="<%= task.id %>" class="fi-plus"></i></a></div>
+
+            <div class="large-4 columns left">
+              <div class="range-slider" data-slider data-options="start: 60; end: 3599;">
+                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                <span class="range-slider-active-segment"></span>
+                <input type="hidden">
+              </div>
             </div>
+            <div class="large-5 columns left">
+            <a href="#" class="button radius tiny"><i class="fi-wrench"></i></a>
+            <a href="#" class="button radius tiny"><i class="fi-wrench"></i></a>
+            <a href="#" class="button radius tiny"><i class="fi-wrench"></i></a>
+            </div>
+          </div>
       </div>
 
       <% end %>

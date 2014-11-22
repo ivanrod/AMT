@@ -24,4 +24,15 @@ class Task < ActiveRecord::Base
 		dedicated = time_separated[0]*60 + time_separated[1]
 		return [dedicated, time_separated[2]]
 	end
+
+	#First deadline
+	def self.first_deadline
+		first = Date.current+1000
+		all.each do |task|
+			if first > task.deadline
+				first = task.deadline
+			end
+		end
+		return first
+	end
 end
