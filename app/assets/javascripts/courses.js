@@ -15,11 +15,35 @@ $(function(){
         var clock;
 
         clock = $('.clock', this.parentNode.parentNode).FlipClock({
+            targetDiv: this.parentNode.parentNode,
+            targetId: this.getAttribute("data-input"),
             clockFace: 'MinuteCounter',
             autoStart: false,
             callbacks: {
                 stop: function() {
-                    $('.message').html('The clock has stopped!')
+                    //$('.message').html('The clock has stopped!' + (clockTime - clock.getTime())/60 + "minuts")
+                    $('.message').html('The clock has stopped!' + (clock.getTime()))
+                    if (clock.getTime() == 0){
+                        console.log(clock.targetDiv.children[0].children[3].getAttribute("data-minutes"));
+                        var hours = clock.targetDiv.children[0].children[3].getAttribute("data-hours");
+                        var minuts = clock.targetDiv.children[0].children[3].getAttribute("data-minutes");
+                        minuts += parseInt((clockTime - clock.getTime())/60);
+                        if (minuts >= 60){
+                            hours += 1;
+                            minuts = minuts - 60;
+                        };
+
+                        clock.targetDiv.children[0].children[3].innerHTML = hours + " h" + minuts + " m"
+                        $.post('/add_time', JSON.stringify([parseInt(hours), parseInt(minuts), clock.targetId]));
+                    }
+                },
+                start: function() {
+                    $('.message').html('The clock has started!' + clock.getTime())
+                },
+                interval: function() {
+                    if (clock.getTime() === 54){
+                        console.log("Hey!")
+                    }
                 }
             }
         });
@@ -35,7 +59,39 @@ $(function(){
         clock.setTime(clockTime);
         });
 
+        $('.button.success', this.parentNode.parentNode).click(function() {
+            $('.button.success', this.parentNode.parentNode).hide();
+            $('.button.alert', this.parentNode.parentNode).hide();
+            $('.button.info', this.parentNode.parentNode).show();
+            $('.range-slider', this.parentNode.parentNode).hide();
+            event.preventDefault();
+            clock.start();
         });
+
+        $('.button.info', this.parentNode.parentNode).click(function() {
+            event.preventDefault();
+            $('.button.info', this.parentNode.parentNode).hide();
+            $('.button.success', this.parentNode.parentNode).show();
+            $('.button.alert', this.parentNode.parentNode).show();
+            //$('.range-slider', this.parentNode.parentNode).show();
+            clock.stop();
+        });
+
+        $('.button.alert', this.parentNode.parentNode).click(function() {
+            event.preventDefault();
+            $('.button.info', this.parentNode.parentNode).hide();
+            $('.button.success', this.parentNode.parentNode).show();
+            $('.button.alert', this.parentNode.parentNode).hide();
+            $('.range-slider', this.parentNode.parentNode).show();
+            //$('.range-slider', this.parentNode.parentNode).show();
+            clockTime = clock.getTime();
+            clock.stop();
+            
+        });
+
+    });
+
+
 
 
 
