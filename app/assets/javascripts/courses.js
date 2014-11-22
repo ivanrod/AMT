@@ -23,17 +23,19 @@ $(function(){
                 stop: function() {
                     //$('.message').html('The clock has stopped!' + (clockTime - clock.getTime())/60 + "minuts")
                     $('.message').html('The clock has stopped!' + (clock.getTime()))
-                    if (clock.getTime() == 0){
+                    if (clock.getTime() == 0 && event == undefined){
                         console.log(clock.targetDiv.children[0].children[3].getAttribute("data-minutes"));
-                        var hours = clock.targetDiv.children[0].children[3].getAttribute("data-hours");
-                        var minuts = clock.targetDiv.children[0].children[3].getAttribute("data-minutes");
+                        var hours = parseInt(clock.targetDiv.children[0].children[3].getAttribute("data-hours"));
+                        var minuts = parseInt(clock.targetDiv.children[0].children[3].getAttribute("data-minutes"));
                         minuts += parseInt((clockTime - clock.getTime())/60);
                         if (minuts >= 60){
                             hours += 1;
                             minuts = minuts - 60;
                         };
 
-                        clock.targetDiv.children[0].children[3].innerHTML = hours + " h" + minuts + " m"
+                        clock.targetDiv.children[0].children[3].innerHTML = hours + " h" + minuts + " m";
+                        clock.targetDiv.children[0].children[3].setAttribute("data-hours", hours);
+                        clock.targetDiv.children[0].children[3].setAttribute("data-minutes", minuts);
                         $.post('/add_time', JSON.stringify([parseInt(hours), parseInt(minuts), clock.targetId]));
                     }
                 },
@@ -69,7 +71,7 @@ $(function(){
         });
 
         $('.button.info', this.parentNode.parentNode).click(function() {
-            event.preventDefault();
+            event.preventDefault(event);
             $('.button.info', this.parentNode.parentNode).hide();
             $('.button.success', this.parentNode.parentNode).show();
             $('.button.alert', this.parentNode.parentNode).show();
@@ -78,7 +80,7 @@ $(function(){
         });
 
         $('.button.alert', this.parentNode.parentNode).click(function() {
-            event.preventDefault();
+            event.preventDefault(event);
             $('.button.info', this.parentNode.parentNode).hide();
             $('.button.success', this.parentNode.parentNode).show();
             $('.button.alert', this.parentNode.parentNode).hide();
