@@ -14,6 +14,8 @@ Amt::Application.routes.draw do
 
   post 'add_time' => "tasks#add_time"
 
+  post 'setChart' => "tasks#set_chart"
+
   resources :courses do 
     resources :tasks
   end

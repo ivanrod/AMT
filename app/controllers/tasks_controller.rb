@@ -50,6 +50,11 @@ class TasksController < ApplicationController
 		end
 	end
 
+	def set_chart
+		chart = Task.all_courses_chart(request.body.read)
+		render json: chart
+	end
+
 	def task_params
 		params.require(:task).permit(:name, :description, :deadline, :task_type)
 	end
