@@ -2,13 +2,16 @@
 // All this logic will automatically be available in application.js.
 //= require tasks/timeInput.js
 //= require flipclock.min.js
+//= require highcharts.js
+//= require highcharts/all_courses.js
 
 $(function(){
     $('#course_start_date').datepicker({ dateFormat: 'D, dd M yy' });
     $('#course_end_date').datepicker({ dateFormat: 'D, dd M yy' });
+    
 
-    $(".pomodoro-button").click(function() {
-        event.preventDefault();
+    $(".pomodoro-button").click(function(e) {
+        e.preventDefault();
         //console.log(this.parentNode)
         $( ".pomodoro-div", this.parentNode.parentNode ).toggle( "blind", 500 );
 
@@ -32,11 +35,12 @@ $(function(){
                             hours += 1;
                             minuts = minuts - 60;
                         };
-
+                        var pomodoroHours = 0;
+                        var pomodoroMinutes = (clockTime - clock.getTime())/60;
                         clock.targetDiv.children[0].children[3].innerHTML = hours + " h" + minuts + " m";
                         clock.targetDiv.children[0].children[3].setAttribute("data-hours", hours);
                         clock.targetDiv.children[0].children[3].setAttribute("data-minutes", minuts);
-                        $.post('/add_time', JSON.stringify([parseInt(hours), parseInt(minuts), clock.targetId]));
+                        $.post('/add_time', JSON.stringify([parseInt(hours), parseInt(minuts), clock.targetId, pomodoroHours, pomodoroMinutes, 'current']));
                     }
                 },
                 start: function() {

@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
 	belongs_to :course
+	has_many :pomodoros
 
 	validates :name, presence: true
 	validates :task_type, presence: true
@@ -22,7 +23,14 @@ class Task < ActiveRecord::Base
 	def self.update_minutes_dedicated(req)
 		time_separated = JSON.parse(req)
 		dedicated = time_separated[0]*60 + time_separated[1]
-		return [dedicated, time_separated[2]]
+		pomodoro = time_separated[3]/60 + time_separated[4]
+		if time_separated[5] == 'current'
+			pomodoro_date = Date.current
+		else
+			pomodoro_date = time_separated[5].to_date
+		end
+
+		return [dedicated, time_separated[2], pomodoro, pomodoro_date]
 	end
 
 	#First deadline

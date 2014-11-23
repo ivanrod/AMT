@@ -37,8 +37,14 @@ class TasksController < ApplicationController
 	def add_time
 		if request.xhr?
 			@data = Task.update_minutes_dedicated(request.body.read)
+			@newPomodoro = Task.find(@data[1]).pomodoros.new(minutes: @data[2], done_at: @data[3])
+
 			Task.find(@data[1]).update_attributes(minutes_dedicated: @data[0])
-			render json: "Bien"
+			if @newPomodoro.save
+				render json: "Bien"
+			else
+				render json: "mal"
+			end
 		else
 			render json: "Mal"
 		end
