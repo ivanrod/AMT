@@ -31,12 +31,14 @@
             <li class="bullet-item large-1 small-1 colums" width="150"><%= task.task_type %></li>
             <li id="hours<%= task.id %>" class="bullet-item large-1 small-1 colums" width="150" data-hours="<%= task.separateTime[0] %>" data-minutes="<%= task.separateTime[1] %>"><%= task.separateTime[0] %>h <%= task.separateTime[1] %>m</li>
             <li class="bullet-item large-2 small-1 colums" width="150"><%= task.deadline %></li>
+            <% if task.minutes_dedicated == 0 %>
             <li class="bullet-item has-tip large-1 small-1 colums" data-tooltip aria-haspopup="true" title="Eliminar">
 
               <%= link_to(course_task_path(@course, task), :class => "button radius tiny", method: 'delete', data:{confirm: "Estás seguro?"}) do %>
               <i class="fi-trash"></i>
               <% end %>
             </li>
+            <% end %>
             <li class="bullet-item large-1 small-1 colums time-input-button has-tip" data-tooltip aria-haspopup="true" title="Añadir tiempo de trabajo"><a href="#" class="button radius tiny"><i class="fi-wrench"></i></a></li>
             <li data-input="<%= task.id %>" class="bullet-item large-1 small-1 colums pomodoro-button has-tip" data-tooltip aria-haspopup="true" title="Comenzar pomodoro" ><a href="#" class="button radius tiny"><i class="fi-clock"></i></a></li>
 
