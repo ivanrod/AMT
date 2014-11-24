@@ -2,8 +2,6 @@
 // All this logic will automatically be available in application.js.
 //= require tasks/timeInput.js
 //= require flipclock.min.js
-//= require highcharts.js
-//= require highcharts/all_courses.js
 
 $(function(){
     $('#course_start_date').datepicker({ dateFormat: 'D, dd M yy' });
@@ -40,6 +38,7 @@ $(function(){
                         clock.targetDiv.children[0].children[3].innerHTML = hours + " h" + minuts + " m";
                         clock.targetDiv.children[0].children[3].setAttribute("data-hours", hours);
                         clock.targetDiv.children[0].children[3].setAttribute("data-minutes", minuts);
+
                         $.post('/add_time', JSON.stringify([parseInt(hours), parseInt(minuts), clock.targetId, pomodoroHours, pomodoroMinutes, 'current']));
                     }
                 },
@@ -54,6 +53,10 @@ $(function(){
             }
         });
         
+        function setTimeButton(){
+            
+        }
+
         var clockTime = 1800;
         clock.setTime(clockTime);
         clock.setCountdown(true);

@@ -4,10 +4,12 @@ class CoursesController < ApplicationController
 		if !signed_in?
 			redirect_to(new_user_session_path)
 		end
+		@specific_js = ["highcharts/all_courses.js", "highcharts.js"]
 	end
 
 	def my_courses
 		@courses = current_user.courses
+
 		@title = "Mis cursos"
 		render 'courses'
 	end

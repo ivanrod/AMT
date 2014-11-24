@@ -36,22 +36,25 @@ class TasksController < ApplicationController
 
 	def add_time
 		if request.xhr?
-			@data = Task.update_minutes_dedicated(request.body.read)
-			@newPomodoro = Task.find(@data[1]).pomodoros.new(minutes: @data[2], done_at: @data[3])
+			data_separated = JSON.parse(request.body.read)
+			data_hash = {"hours" => data_separated[0].to_i,
+									"minutes" => data_separated[1].to_i,
+									"task_id" => data_separated[2],
+								"pomodoro_hours" => data_separated[3],
+								"pomodoro_minutes" => data_separated[4],
+								"pomodoro_date" => data_separated[5]}
 
-			Task.find(@data[1]).update_attributes(minutes_dedicated: @data[0])
-			if @newPomodoro.save
-				render json: "Bien"
-			else
-				render json: "mal"
-			end
+			@updated_and_new_pomodoro = Task.update_minutes_dedicated(data_hash)
+
+			render json: @updated_and_new_pomodoro
+			
 		else
 			render json: "Mal"
 		end
 	end
 
 	def set_chart
-		chart = Task.all_courses_chart(request.body.read)
+		chart = Course.all_courses_chart(request.body.read)
 		render json: chart
 	end
 
