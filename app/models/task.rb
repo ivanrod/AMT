@@ -25,6 +25,8 @@ class Task < ActiveRecord::Base
 
 		User.find(user).courses.each do |course|
 			course_hash = {}
+			min_date = nil
+			max_date = nil
 			course.tasks.each do |task|
 				task.pomodoros.each do |pomodoro|
 					if course_hash.has_key?(pomodoro.done_at)
@@ -32,8 +34,24 @@ class Task < ActiveRecord::Base
 					else
 						course_hash[pomodoro.done_at] = pomodoro.minutes/60.0
 					end
+					
+
+					if min_date==nil || min_date > pomodoro.done_at
+						min_date = pomodoro.done_at
+					end
+
+					if max_date==nil || max_date < pomodoro.done_at
+						max_date = pomodoro.done_at
+					end
+
 				end
-				puts course_hash
+			end
+			puts min_date
+			puts max_date
+			(min_date..max_date).each do |date|
+				if !course_hash.has_key?(date)
+					course_hash[date] = 0
+				end
 			end
 
 			course_array = []

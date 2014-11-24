@@ -7,7 +7,7 @@
             Cursos
             <h3><%= current_user.courses.size %></h3>
         </div>
-        <i class="fi-price-tag right sales"></i>
+        <i class="fi-info right sales"></i>
         <div class="clearfix"></div>
     </div>
 </div>
@@ -18,7 +18,7 @@
             Tareas
             <h3><%= Task.all.size %></h3>
         </div>
-        <i class="fi-price-tag right sales"></i>
+        <i class="fi-book right sales"></i>
         <div class="clearfix"></div>
     </div>
 </div>
@@ -29,18 +29,20 @@
             Siguiente deadline
             <h3><%= Task.first_deadline %></h3>
         </div>
-        <i class="fi-price-tag right sales"></i>
+        <i class="fi-clipboard-pencil right sales"></i>
         <div class="clearfix"></div>
     </div>
 </div>
 
-<div class="large-8 columns">
+<div class="large-9 columns">
 <div id="container" style="width:100%; height:400px;" data-ud = "<%= current_user.id %>"></div>
 </div>
 
-<div class="large-12 columns">
+<div class="large-9 columns">
 <%= link_to("Mis cursos", my_courses_path, :class => "button radius") %>
+<!--
 <%= link_to("Todos los cursos", all_courses_path, :class => "button radius") %>
+-->
 </div>
 
 </div>

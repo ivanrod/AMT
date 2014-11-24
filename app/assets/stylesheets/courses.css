@@ -1,3 +1,127 @@
 /*
  *= require flipclock
  */
+
+.border {
+    border: 1px solid #e1e1e1;
+}
+
+
+
+/*color*/
+.blue {
+    color: #2d2f3b !important;
+}
+
+.blue-bg {
+    background: #2d2f3b;
+    color: #fff;
+}
+    .blue-bg:hover {
+        background: #282A38;
+    }
+
+.white {
+    color: #fff !important;
+}
+
+.white-bg {
+    background: #fff;
+}
+
+.light-grey-bg {
+    background-color: #f3f3f3;
+}
+
+
+
+.light-dark-bg {
+    background-color: rgba(215, 215, 215, 1);
+}
+
+.light-grey-bg-pattern {
+    background-color: #f3f3f3;
+    padding-bottom: 20px;
+}
+
+.coral {
+    color: #f16c65 !important;
+}
+
+.coral-bg {
+    background: #f16c65;
+    color: #fff;
+}
+
+    .coral-bg:hover {
+        background: #FC5850;
+    }
+
+.white-bg-btn {
+    background: #fff;
+    color: #444;
+    border: 1px solid #e1e1e1;
+}
+
+    .white-bg-btn:hover {
+        border-color: #FC5850;
+        background: #fff;
+        color: #FC5850;
+    }
+
+.width-100 {
+    width: 100%;
+}
+
+.width-95 {
+    width: 95%;
+}
+
+
+.fb-blue {
+    background: #013567;
+}
+
+.google-plus {
+    background: #dd4c39;
+}
+
+.dribbble {
+    background: #e14c86;
+}
+/*end color*/
+
+
+
+/*end slider*/
+/*end form*/
+/*inbox*/
+#inbox i {
+    margin-right:5px;
+}
+/*end inbox*/
+
+/*dashboard*/
+.stats {
+    background: #bbb;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+    .stats i {
+        padding: 10px;
+        color: #fff;
+        font-size: 2rem;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+.sales {
+    background: #BDCDD9;
+}
+
+.user {
+    background: #11ba77;
+}
+
