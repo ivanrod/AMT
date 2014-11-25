@@ -1,8 +1,12 @@
 Amt::Application.routes.draw do
 
+  resources :authentications
+
   #devise_for :users
 
-  devise_for :users, :controllers => {:registrations => 'users/registrations'}
+  devise_for :users, :controllers => {:registrations => 'users/registrations', :omniauth_callbacks => "users/omniauth_callbacks"}
+
+  get '/auth/:provider/callback' => 'authentications#create'
 
   root 'welcome#index'
 

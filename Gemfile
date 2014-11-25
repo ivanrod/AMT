@@ -6,6 +6,12 @@ gem 'rails', '4.0.4'
 # Jquery-ui
 gem 'jquery-ui-rails'
 
+# Omniauth
+gem 'omniauth-coursera', :github => 'leoromanovsky/omniauth-coursera'
+
+# Nifty scaffold
+gem "nifty-generators", :group => :development
+
 # Devise
 gem 'devise'
 
@@ -58,3 +64,5 @@ group :production do
   gem 'pg',  '0.17.1'
   gem 'rails_12factor',  '0.0.2'
 end
+
+gem "mocha", group: :test

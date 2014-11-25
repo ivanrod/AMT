@@ -1,4 +1,5 @@
 <div class="large-10 columns">
+ 
 
 <div class="large-12 colums">
 <div class="large-3 medium-6 small-12 columns">
@@ -39,7 +40,9 @@
 </div>
 
 <div class="large-9 columns">
+
 <%= link_to("Mis cursos", my_courses_path, :class => "button radius") %>
+<%= link_to("Mis cursos en Coursera", user_omniauth_authorize_path(:coursera), :class => "button radius") %>
 <!--
 <%= link_to("Todos los cursos", all_courses_path, :class => "button radius") %>
 -->
