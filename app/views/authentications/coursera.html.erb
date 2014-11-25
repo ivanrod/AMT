@@ -1,0 +1,16 @@
+<div class="large-10 columns">
+
+  <h2>Tus cursos en Coursera</h2>
+  
+  
+  <% @coursera_courses.each do |course| %>
+  <h3><%= course["name"] %></h3>
+  <img width="10%" src="<%= course['photo'] %>">
+  <ul>
+     <li><b>Description:</b> <%= course["shortDescription"] %></li>
+     <li><b>Time estimated:</b> <%= course["time_estimated"] %></li>   
+  </ul>
+  <% end %>
+  
+
+</div>
