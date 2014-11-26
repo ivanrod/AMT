@@ -16,6 +16,30 @@ class User < ActiveRecord::Base
 	  end
 	end
 
+	#Gets all tasks from a user
+	def all_user_tasks
+		user_tasks = []
+		courses.each do |course|
+			course.tasks.each do |task|
+				user_tasks.push(task)
+			end
+		end
+		return user_tasks
+	end
+
+	#Gets next deadline
+	def get_next_deadline
+		next_deadline = nil
+		courses.each do |course|
+			course.tasks.each do |task|
+				if (next_deadline == nil || task.deadline < next_deadline) && task.deadline >= Time.current
+					next_deadline = task.deadline
+				end
+			end
+		end
+		return next_deadline
+	end
+
 	#validates :name, presence: true
 	#validates :name, length: { maximum: 25 }
 end

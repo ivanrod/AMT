@@ -17,7 +17,7 @@
     <div class="stats border">
         <div class="left">
             Tareas
-            <h3><%= Task.all.size %></h3>
+            <h3><%= current_user.all_user_tasks.size %></h3>
         </div>
         <i class="fi-book right sales"></i>
         <div class="clearfix"></div>
@@ -27,8 +27,8 @@
 <div class="large-3 medium-6 small-12 columns">
     <div class="stats border">
         <div class="left">
-            Siguiente deadline
-            <h3><%= Task.first_deadline %></h3>
+            Próxima deadline
+            <h3><%= current_user.get_next_deadline %></h3>
         </div>
         <i class="fi-clipboard-pencil right sales"></i>
         <div class="clearfix"></div>

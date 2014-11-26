@@ -40,6 +40,7 @@ class Task < ActiveRecord::Base
 		end
 	end
 
+	#Hours to minutes
 	def self.hours_to_minutes(hours)
 		minutes = hours*60
 	end
@@ -54,4 +55,5 @@ class Task < ActiveRecord::Base
 		end
 		return first
 	end
+
 end
