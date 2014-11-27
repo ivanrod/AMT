@@ -8,6 +8,8 @@ Amt::Application.routes.draw do
 
   get '/auth/:provider/callback' => 'authentications#create'
 
+  get 'coursera/:coursera_id/new' => 'courseras#new', as: 'coursera'
+
   root 'welcome#index'
 
   get 'dashboard' => 'courses#index'

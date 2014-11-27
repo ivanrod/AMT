@@ -1,0 +1,14 @@
+<div class="large-offset-4  large-4 colums">
+<h1>Edit Course</h1>
+<% if flash[:error] %>
+<div data-alert class="alert-box alert radius">
+   <p><%= flash[:error] %></p> 
+<% @errors.each do |error_message| %>
+   <li><p><%= error_message %></p> </li>
+<% end %>
+</div>
+<% end %>
+
+<%= render "form" %>
+
+</div>

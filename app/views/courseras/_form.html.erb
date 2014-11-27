@@ -1,0 +1,24 @@
+<%= form_for [@course] do |f| %>
+<fieldset>
+	<legend>Nuevo curso</legend>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :platform %>
+<%= f.select :platform, ["Coursera","Udemy","edX","Udacity","Otros"] %>
+<%= f.label :estimated_hours %>
+<%= f.number_field :estimated_hours, :step=>'any' %>
+<%= f.label :start_date %>
+<div class="row">
+<%= f.text_field(:start_date, :class => "large-2 colums" ) %>
+</div>
+<%= f.label :end_date %>
+<%= f.text_field(:end_date) %>
+<br/>
+<%= f.submit @action, :class => "button radius" %>
+
+<% end %>
+
+<%= link_to("Cancelar", my_courses_path, :class => "button radius alert right") %>
+</fieldset>

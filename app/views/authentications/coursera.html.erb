@@ -11,8 +11,9 @@
 	     <li><b>Description:</b> <%= course["shortDescription"] %></li>
 	     <li><b>Time estimated:</b> <%= course["time_estimated"] %></li>   
 	  </ul>
+	  <%= link_to("Importar", coursera_path(course['id']), :class => "button radius") %>
   </div>
-	  <% end %>
+  <% end %>
   
   
 

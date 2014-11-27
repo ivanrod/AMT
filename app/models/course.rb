@@ -3,7 +3,7 @@ class Course < ActiveRecord::Base
 	has_many :tasks
 
 	validates :name, presence: true
-	validate :start_date_is_today_or_after
+	#validate :start_date_is_today_or_after
 	validate :end_date_is_after_start_date
 
 	def start_date_is_today_or_after
@@ -47,9 +47,11 @@ class Course < ActiveRecord::Base
 			end
 			puts min_date
 			puts max_date
-			(min_date..max_date).each do |date|
-				if !course_hash.has_key?(date)
-					course_hash[date] = 0
+			if min_date != nil || max_date != nil
+				(min_date..max_date).each do |date|
+					if !course_hash.has_key?(date)
+						course_hash[date] = 0
+					end
 				end
 			end
 
@@ -69,6 +71,40 @@ class Course < ActiveRecord::Base
 		return courses.to_json
 	end
 
+	def self.set_coursera_courses(courses)
+		@@coursera_courses = courses 
+	end
+
+	def self.get_coursera_courses
+		return @@coursera_courses
+	end
+
+	def self.get_data_from_session_array(session_array, session_id)
+		start_day = nil
+		end_day = nil
+		puts session_array[0]
+		session_array.each do |session|
+			if session["id"] == session_id
+				start_day = session["startYear"].to_s + "-" + session["startMonth"].to_s + "-" + session["startDay"].to_s
+			end
+		end
+		puts session_id
+		puts "AHI VA LA OSTIA!!!!!!!!!!!!!!!!!!!"
+		puts start_day
+		return start_day.to_s
+	end
+
+	def self.get_start_and_end_date(coursera_enrollments, course_id)
+		start_date = nil
+		end_date = nil
+		coursera_enrollments.each do |course|
+			if course["courseId"] == course_id
+				start_date = course["startDate"]
+				end_date = course["endDate"]
+			end
+		end
+		return start_date, end_date
+	end	
 
 	
 end
