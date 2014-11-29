@@ -27,9 +27,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       
       #x.split[0].split("-")[-1]
       key["time_estimated"] = @catalog_response_parsed["elements"][0]["estimatedClassWorkload"]
+
       key["shortDescription"] = @catalog_response_parsed["elements"][0]["shortDescription"]
       key["start_date"], key["end_date"] = Course.get_start_and_end_date(@coursera_enrollments, key['id'])
-      
+      if key["time_estimated"] == ""
+        key["time_estimated"] = "0"
+        key["start_date"] = Time.current.utc.to_i
+        key["end_date"] = (Time.current+10000000).utc.to_i
+      end
     end
 =begin
     uri2= URI.parse("https://api.coursera.org/api/catalog.v1/sessions?fields=courseId,startDay,startMonth,startYear")

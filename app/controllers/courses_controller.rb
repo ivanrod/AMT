@@ -22,6 +22,11 @@ class CoursesController < ApplicationController
 
 	def show
 		@course = Course.find(params[:id])
+		@hours_per_day = Course.hours_per_day(@course)
+		@hours_per_week = Course.hours_per_week(@hours_per_day)
+		@percent_per_week = Course.percent_per_week(@hours_per_week,@course.estimated_hours).to_i
+		
+
 	end
 
 	def new

@@ -10,6 +10,8 @@ Amt::Application.routes.draw do
 
   get 'coursera/:coursera_id/new' => 'courseras#new', as: 'coursera'
 
+  get 'myProfile' => 'users#show'
+
   root 'welcome#index'
 
   get 'dashboard' => 'courses#index'

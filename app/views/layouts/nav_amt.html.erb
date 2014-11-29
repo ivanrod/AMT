@@ -37,7 +37,7 @@
         <nav class="right-off-canvas-menu">
           <ul class="off-canvas-list">
             <li><label for="">Usuario</label></li>
-            <li><a href="#">Perfil</a></li>
+            <li><%= link_to("Perfil", myProfile_path) %></li>
             <li><%= link_to("Mis cursos", my_courses_path) %></li>
             <li><%= link_to("Salir", destroy_user_session_path, :class => "button radius", method: 'delete') %></li>
             <li><label for="">Estadísticas</label></li>
@@ -51,8 +51,10 @@
             <label>Dashboard</label>
           <% end %>       
           <a class="item">
+            <%= link_to my_courses_path, :class => "item" do %>
             <i class="fi-graph-pie"></i>
-            <label>Resumen</label>
+            <label>Mis cursos</label>
+            <% end %>
           </a>
           <a class="item">
             <i class="fi-info"></i>
