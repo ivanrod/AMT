@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141201095021) do
 
   create_table "courseras", force: true do |t|
     t.integer  "course_id"
+    t.integer  "coursera_web_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
