@@ -1,7 +1,9 @@
 <div class="large-10 columns">
 
   <h3><%= @course.name %></h3>
-  
+  <% if Coursera.where(course_id: @course.id) != [] %>
+    <%=image_tag("logos/coursera.jpg", size: "160", alt: "Coursera logo") %>
+  <% end %>
   <ul>
      <li><b>Descripción:</b> <%= @course.description %></li>
      <li><b>Plataforma:</b> <%= @course.platform %></li>
