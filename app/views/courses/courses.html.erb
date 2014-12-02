@@ -21,6 +21,9 @@
 		    <tr>
 
 		      <td><%= link_to(course.name, course_path(course)) %>
+		      	<% if Coursera.where(course_id: course.id) != [] %>
+			    <%=image_tag("logos/coursera.jpg", size: "60", alt: "Coursera logo") %>
+			  <% end %>
 				<ul>
 					<% course.tasks.each do |task| %>
 						<li><%= task.name %></li>
@@ -37,7 +40,6 @@
 		      <td><%= link_to("Borrar", course_path(course), :class => "button radius tiny alert", method: 'delete', data:{confirm: "Estás seguro?"}) %></td>
 			  <% end %>
 		    </tr>
-		    
 		    <% end %>
 		  </tbody>
 		</table>

@@ -66,7 +66,7 @@
             </div>  
             <div class="large-2 columns">
               <label for="pomodoro_time<%= task.id %>">Fecha</label>
-              <input class="large-2 colums hasDatepicker" id="pomodoro_time<%= task.id %>" type="text" value="<%= Date.current %>">
+              <input data-date-format='yyyy-mm-dd' class="large-2 colums hasDatepicker" id="pomodoro_time<%= task.id %>" type="text" value="<%= Date.current %>">
             </div>
              <div data-input="<%= task.id %>" class="bullet-item large-1 small-1 colums time-input-button time-input-button-plus has-tip" data-tooltip aria-haspopup="true" title="Añadir tiempo de trabajo"><a data-input="<%= task.id %>" href="#" class="button radius tiny"><i data-input="<%= task.id %>" class="fi-plus"></i></a></div>
           </div>

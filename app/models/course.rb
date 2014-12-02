@@ -23,38 +23,7 @@ class Course < ActiveRecord::Base
 		courses = []
 
 		User.find(user).courses.each do |course|
-			#ENCAPSULAR ESTO CON hours_per_day
-			course_hash = {}
-			min_date = nil
-			max_date = nil
-			course.tasks.each do |task|
-				task.pomodoros.each do |pomodoro|
-					if course_hash.has_key?(pomodoro.done_at)
-						course_hash[pomodoro.done_at] += (pomodoro.minutes/60.0)
-					else
-						course_hash[pomodoro.done_at] = pomodoro.minutes/60.0
-					end
-					
-
-					if min_date==nil || min_date > pomodoro.done_at
-						min_date = pomodoro.done_at
-					end
-
-					if max_date==nil || max_date < pomodoro.done_at
-						max_date = pomodoro.done_at
-					end
-
-				end
-			end
-			puts min_date
-			puts max_date
-			if min_date != nil || max_date != nil
-				(min_date..max_date).each do |date|
-					if !course_hash.has_key?(date)
-						course_hash[date] = 0
-					end
-				end
-			end
+			course_hash = hours_per_day(course)
 
 			course_array = []
 			course_hash.each do |course_date, course_hours|
@@ -84,7 +53,6 @@ class Course < ActiveRecord::Base
 				else
 					course_hash[pomodoro.done_at] = pomodoro.minutes/60.0
 				end
-				
 
 				if min_date==nil || min_date > pomodoro.done_at
 					min_date = pomodoro.done_at
@@ -153,9 +121,6 @@ class Course < ActiveRecord::Base
 				start_day = session["startYear"].to_s + "-" + session["startMonth"].to_s + "-" + session["startDay"].to_s
 			end
 		end
-		puts session_id
-		puts "AHI VA LA OSTIA!!!!!!!!!!!!!!!!!!!"
-		puts start_day
 		return start_day.to_s
 	end
 
