@@ -11,10 +11,7 @@ $(function(){
 
 		event.preventDefault();
 		$(document).foundation('reflow');
-		//console.log(this.parentNode)
-		//console.log($('.hasDatepicker', this.parentNode.parentNode))
-		$('#pomodoro_time22').fdatepicker({ dateFormat: 'D, dd M yy' });
-		$('.hasDatepicker', this.parentNode.parentNode).datepicker({ dateFormat: 'D, dd M yy' });
+		$('.hasDatepicker', this.parentNode.parentNode).fdatepicker({ dateFormat: 'D, dd M yy' });
 		$( ".time-input", this.parentNode.parentNode ).toggle( "blind", 500 );
 	});
 });

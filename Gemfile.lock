@@ -36,6 +36,10 @@ GEM
     arel (4.0.2)
     bcrypt (3.1.9)
     builder (3.1.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -90,6 +94,11 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.17.1)
     polyglot (0.3.5)
     rack (1.5.2)
@@ -162,6 +171,7 @@ DEPENDENCIES
   mocha
   nifty-generators
   omniauth-coursera!
+  paperclip (~> 4.2)
   pg (= 0.17.1)
   rails (= 4.0.4)
   rails_12factor (= 0.0.2)

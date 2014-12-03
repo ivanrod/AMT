@@ -1,0 +1,203 @@
+[33mcommit 8e7c248b06e8c21ada5a084848142e496f427457[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Dec 2 16:09:41 2014 +0100
+
+    foundation datepicker added
+
+[33mcommit f388adbb1da6e626e32e264fe04c4bc81821dd95[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Dec 1 13:20:27 2014 +0100
+
+    added coursera logo
+
+[33mcommit 41fa1d1fa7d638ede3952cd225d7071333cc5a79[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Dec 1 12:34:35 2014 +0100
+
+    if coursera_id exists dont import the course
+
+[33mcommit cd2891dbf987096dd108c7b1fc6875baffcc04d7[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Dec 1 10:56:39 2014 +0100
+
+    added coursera model
+
+[33mcommit de0a463f169147d2600ca6616e829b7962bdec48[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Sat Nov 29 13:50:58 2014 +0100
+
+    added show view to users
+
+[33mcommit 1b1996b9cbba74eac97b0be0714494c886a3176e[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Thu Nov 27 15:34:21 2014 +0100
+
+    Import courses from coursera
+
+[33mcommit 3b3fcc2cc33d639afe62ac02472d249b685c438b[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Wed Nov 26 01:16:07 2014 +0100
+
+    Added helper methods to get users tasks and next deadline
+
+[33mcommit fffed98df06d6851238c4bb475c0f132467e9877[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Nov 25 20:42:39 2014 +0100
+
+    Coursera courses has description, estimated hours
+
+[33mcommit 2b6e77526072623a8ca2ff457a0c01186bcc874a[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Nov 25 19:05:55 2014 +0100
+
+    Authorized with coursera API
+
+[33mcommit e45f15d9485602d79798409663cb9dbf2f21a2b8[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Nov 24 17:44:25 2014 +0100
+
+    Refactorized update_minutes_dedicated and User.all_courses_chart
+
+[33mcommit 3a5dc8b204d4a23b95b9f924237cfe9a0a116117[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Nov 24 10:12:59 2014 +0100
+
+    if estimated time is imputed you cant delete a task
+
+[33mcommit 80833bb085dd172640b3e4662aee2b3b88dc9e16[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Nov 24 01:07:11 2014 +0100
+
+    charts optimized
+
+[33mcommit 92468c34540a23b7a8b16bc900acdca83dd8d825[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Sun Nov 23 19:24:09 2014 +0100
+
+    First chart
+
+[33mcommit 78630b59b9944145476dae6aa3a44dce61d9f520[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Sun Nov 23 12:15:36 2014 +0100
+
+    added pomodoro table
+
+[33mcommit 3d06b6fac868065c66a985bd0737b6a57e99a7e2[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Sat Nov 22 23:19:06 2014 +0100
+
+    Pomodoro time added to database properly
+
+[33mcommit 96a34a742c8e86eb7829e0ac1cd2e8d11d3c38dc[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Sat Nov 22 22:31:25 2014 +0100
+
+    Pomodoro time added to database
+
+[33mcommit a42d8126be8c16cc3268509315ce64c0f70a4011[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Sat Nov 22 16:59:31 2014 +0100
+
+    added Pomodoros
+
+[33mcommit a1bf78e6947c49fdc910e8a17a6034349fe5f9b9[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Fri Nov 21 00:20:10 2014 +0100
+
+    added minutes_dedicated to tasks
+
+[33mcommit 7615e798543bc569bc58ea2779e8e85956f7e94a[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Thu Nov 20 13:53:19 2014 +0100
+
+    added toggle function to 'Añadir tiempo' button
+
+[33mcommit a326bdc8c8e007e9851c5a3eedd6886b8d949a19[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Thu Nov 20 10:03:20 2014 +0100
+
+    Functionality: Delete task
+
+[33mcommit 402acb33149f324e7d3957db64a87e7217c8d2cb[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Thu Nov 20 00:35:46 2014 +0100
+
+    added Task CRUD
+
+[33mcommit 57d7b3200d6aa9807a21573c958885bb504884ac[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Wed Nov 19 19:00:30 2014 +0100
+
+    show courses
+
+[33mcommit faf445286e0484e4258a1628f4246dd187880d74[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Wed Nov 19 13:32:51 2014 +0100
+
+    added 'Mis cursos' & 'Todos los cursos' buttons in 'Dashboard'
+
+[33mcommit f3dd580793d47d6414dee575ae862703e0b56b96[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Wed Nov 19 11:31:56 2014 +0100
+
+    added Datepicker to Cursos(Fecha inicio Fecha Fin)
+
+[33mcommit 9b88f55adce016e40ed810e49e98de675519f9f4[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Wed Nov 19 00:49:40 2014 +0100
+
+    Alta curso: Input descripcion, nombre
+
+[33mcommit 903fbbafaa1e51e55414679d6620d8495a7ac87b[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Nov 18 23:55:43 2014 +0100
+
+    Alta curso: botón crear
+
+[33mcommit 6f970e1e5b01f8ab4260873eba94de78cf5e7cfc[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Nov 18 19:12:05 2014 +0100
+
+    Login
+
+[33mcommit 001f59f825c56b0367d4cb99961fbd6d06be843c[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Nov 18 18:02:52 2014 +0100
+
+    After sign up redirect to dashboard
+
+[33mcommit d6cc7d2e598fdda27321659ad4b40b4dc1780336[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Nov 18 14:09:54 2014 +0100
+
+    User registration
+
+[33mcommit 449186f81711a3aa0b8fcd46804c6f572826ba3e[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Tue Nov 18 10:02:47 2014 +0100
+
+    courses CRUD
+
+[33mcommit 37e441ea6a04a36bcf7fe9534226070c63817bcf[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Nov 17 13:28:43 2014 +0100
+
+    added Readme.md
+
+[33mcommit 5795654245043b98b4bd387405448f6578f83ac7[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Nov 17 12:48:39 2014 +0100
+
+    added offcanvas & icon-bar
+
+[33mcommit 5e5aa2447da8718da2b701c708ca7b219744c48b[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Mon Nov 17 10:50:45 2014 +0100
+
+    Added course & user models
+
+[33mcommit 01b5acb146a6fc35b2bffeada259968b0c024432[m
+Author: Ivan Rodriguez <frivanrodriguez@gmail.com>
+Date:   Sun Nov 16 21:53:42 2014 +0100
+
+    First commit

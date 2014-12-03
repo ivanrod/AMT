@@ -6,6 +6,9 @@ gem 'rails', '4.0.4'
 # Jquery-ui
 gem 'jquery-ui-rails'
 
+# Paperclip
+gem "paperclip", "~> 4.2"
+
 # Omniauth
 gem 'omniauth-coursera', :github => 'leoromanovsky/omniauth-coursera'
 
