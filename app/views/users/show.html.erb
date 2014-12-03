@@ -3,7 +3,7 @@
 	<h2>Perfil de usuario</h2>
 
 	<div class="large-offset-4">
-	  <%= image_tag(current_user.avatar.url || 'paco_fiestas.png', size: "200", class: "large-4") %>
+	  <%= image_tag(current_user.avatar.url || 'paco_fiestas.png', size: "200", class: "large-4", id: "userAvatar") %>
 	  <div class="row">
 	  	<div id="inputButton" class="large-4 button">Subir imagen...</div>
 	  </div>
@@ -19,18 +19,3 @@
 <%= form_for @user, :id => "form-id", :url => myProfile_path, :html => { :multipart => true } do |form| %>
   <%= form.file_field :avatar, :id => "fileInput", :style => "display: none;" %>
 <% end %>
-
-
-<script>
-   document.getElementById("inputButton").addEventListener("click", chooseFile);
-   function chooseFile() {
-
-      $("#fileInput").click();
-   }
-
-   document.getElementById("submit-btn").addEventListener("click", submitFile);
-   function submitFile(event) {
-	  event.preventDefault();
-	  $("#edit_user_2").submit();
-   };
-</script>
