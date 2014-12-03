@@ -8,7 +8,7 @@ $(function(){
     $('#course_end_date').datepicker({ dateFormat: 'D, dd M yy' });
   
     $(".pomodoro-button").click(function(e) {
-        $(document).foundation('reflow');
+        
         e.preventDefault();
         //console.log(this.parentNode)
         $( ".pomodoro-div", this.parentNode.parentNode ).toggle( "blind", 500 );
@@ -97,6 +97,8 @@ $(function(){
             clock.stop();
             
         });
+        
+        $(document).foundation('reflow');
 
     });
 

@@ -10,10 +10,11 @@ class UsersController < ApplicationController
 
 	def edit_image
 		current_user.update_attributes(user_params)
+		redirect_to myProfile_path
 	end
 
 
 	def user_params
-	  params.require(:user).permit(:avatar)
+	  params.require(:user).permit(:avatar, :avatar_file_name)
 	end
 end

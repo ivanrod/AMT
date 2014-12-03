@@ -12,6 +12,8 @@ Amt::Application.routes.draw do
 
   get 'myProfile' => 'users#show'
 
+  patch 'myProfile' => 'users#edit_image'
+
   root 'welcome#index'
 
   get 'dashboard' => 'courses#index'
