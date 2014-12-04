@@ -11,7 +11,7 @@ function chooseFile() {
 document.getElementById("submit-btn").addEventListener("click", submitFile);
 function submitFile(event) {
   event.preventDefault();
-  $("#edit_user_2").submit();
+  $(".edit_user").submit();
 };
 
 //Previews the image before it's saved

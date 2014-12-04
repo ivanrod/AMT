@@ -28,7 +28,7 @@
     <div class="stats border">
         <div class="left">
             Próxima deadline
-            <h3><%= current_user.get_next_deadline %></h3>
+            <h3><%= current_user.get_next_deadline.to_date %></h3>
         </div>
         <i class="fi-clipboard-pencil right sales"></i>
         <div class="clearfix"></div>
