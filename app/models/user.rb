@@ -47,13 +47,15 @@ class User < ActiveRecord::Base
 	def all_deadlines
 		deadlines = []
 		courses.each do |course|
-			task_deadlines = {}
+			
 			course.tasks.each do |task|
-				task_deadlines["title"] = task.name
+				task_deadlines = {}
+				task_deadlines["title"] = task.name + "-" + course.name
 				task_deadlines["start"] = task.deadline
 				task_deadlines["color"] = "red"
+				deadlines.push(task_deadlines)
 			end
-			deadlines.push(task_deadlines)
+			
 			deadlines.push(calendar_course(course))
 		end
 		return deadlines
