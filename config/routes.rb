@@ -16,6 +16,8 @@ Amt::Application.routes.draw do
 
   get 'weeklyplan' => 'planification#weekly'
 
+  post 'getdeadlines' => 'planification#get_deadlines'
+
   root 'welcome#index'
 
   get 'dashboard' => 'courses#index'

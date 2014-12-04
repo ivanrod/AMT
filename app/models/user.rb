@@ -43,6 +43,21 @@ class User < ActiveRecord::Base
 		return next_deadline
 	end
 
+	#Gets all deadlines
+	def all_deadlines
+		deadlines = []
+		courses.each do |course|
+			taskDeadlines = {}
+			course.tasks.each do |task|
+				taskDeadlines["title"] = task.name
+				taskDeadlines["start"] = task.deadline
+				taskDeadlines["color"] = "red"
+			end
+			deadlines.push(taskDeadlines)
+		end
+		return deadlines
+	end
+
 	#validates :name, presence: true
 	#validates :name, length: { maximum: 25 }
 end
