@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 		next_deadline = nil
 		courses.each do |course|
 			course.tasks.each do |task|
-				if (next_deadline == nil || task.deadline < next_deadline) && task.deadline >= Time.current
+				if (next_deadline == nil || task.deadline.to_date < next_deadline) && task.deadline.to_date >= Time.current
 					next_deadline = task.deadline
 				end
 			end

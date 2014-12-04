@@ -14,6 +14,8 @@ Amt::Application.routes.draw do
 
   patch 'myProfile' => 'users#edit_image'
 
+  get 'weeklyplan' => 'planification#weekly'
+
   root 'welcome#index'
 
   get 'dashboard' => 'courses#index'

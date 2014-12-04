@@ -3,7 +3,7 @@
 	<h2>Perfil de usuario</h2>
 
 	<div class="large-offset-4">
-	  <%= image_tag(current_user.avatar.url || 'paco_fiestas.png', size: "200", class: "large-4", id: "userAvatar") %>
+	  <%= image_tag(current_user.avatar.url(:medium) || 'paco_fiestas.png', size: "200", class: "large-4", id: "userAvatar") %>
 	  <div class="row">
 	  	<div id="inputButton" class="large-4 button">Subir imagen...</div>
 	  </div>

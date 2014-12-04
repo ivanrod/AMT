@@ -39,10 +39,11 @@
 <div id="container" style="width:100%; height:400px;" data-ud = "<%= current_user.id %>"></div>
 </div>
 
-<div class="large-9 columns">
+<div class="large-11 columns">
 
 <%= link_to("Mis cursos", my_courses_path, :class => "button radius") %>
 <%= link_to("Mis cursos en Coursera", user_omniauth_authorize_path(:coursera), :class => "button radius") %>
+<%= link_to("Programación semanal", weeklyplan_path(:coursera), :class => "button radius") %>
 <!--
 <%= link_to("Todos los cursos", all_courses_path, :class => "button radius") %>
 -->

@@ -37,6 +37,7 @@
         <nav class="right-off-canvas-menu">
           <ul class="off-canvas-list">
             <li><label for="">Usuario</label></li>
+            <li><%= image_tag(current_user.avatar.url || 'paco_fiestas.png', size: "200", class: "large-12") %></li>
             <li><%= link_to("Perfil", myProfile_path) %></li>
             <li><%= link_to("Mis cursos", my_courses_path) %></li>
             <li><%= link_to("Salir", destroy_user_session_path, :class => "button radius", method: 'delete') %></li>
@@ -62,10 +63,10 @@
             <i class="fi-wrench"></i>
             <label>Herramientas</label>
           </a>
-          <a class="item">
+          <%= link_to weeklyplan_path, :class => "item" do %>
             <i class="fi-list-bullet"></i>
-            <label>Tarea</label>
-          </a>
+            <label>Programación semanal</label>
+          <% end %>
 
         </nav>
 

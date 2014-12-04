@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203145641) do
+ActiveRecord::Schema.define(version: 20141204112503) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -57,11 +57,11 @@ ActiveRecord::Schema.define(version: 20141203145641) do
     t.string   "name"
     t.text     "description"
     t.string   "task_type"
-    t.date     "deadline"
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "minutes_dedicated", default: 0
+    t.datetime "deadline"
   end
 
   create_table "users", force: true do |t|
