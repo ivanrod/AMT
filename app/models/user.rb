@@ -43,19 +43,28 @@ class User < ActiveRecord::Base
 		return next_deadline
 	end
 
-	#Gets all deadlines
+	#Gets all deadlines with calendar format
 	def all_deadlines
 		deadlines = []
 		courses.each do |course|
-			taskDeadlines = {}
+			task_deadlines = {}
 			course.tasks.each do |task|
-				taskDeadlines["title"] = task.name
-				taskDeadlines["start"] = task.deadline
-				taskDeadlines["color"] = "red"
+				task_deadlines["title"] = task.name
+				task_deadlines["start"] = task.deadline
+				task_deadlines["color"] = "red"
 			end
-			deadlines.push(taskDeadlines)
+			deadlines.push(task_deadlines)
+			deadlines.push(calendar_course(course))
 		end
 		return deadlines
+	end
+
+	#gets course with calendar format
+	def calendar_course(calendar_course)
+		course_hash = {"title" => calendar_course.name, 
+				"start" => calendar_course.start_date, 
+				"end" => calendar_course.end_date}
+		return course_hash
 	end
 
 	#validates :name, presence: true
