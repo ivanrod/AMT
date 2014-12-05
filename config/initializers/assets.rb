@@ -1,6 +1,6 @@
 
 #Planification
-Rails.application.config.assets.precompile += ['foundation-icons.css','planification.js', 'planification.css']
+Rails.application.config.assets.precompile += ["highcharts/all_courses.js", "vendor/modernizr", 'foundation-icons.css','planification.js', 'planification.css']
 
 #Foundation Icons
 array_to_slice = Dir["app/assets/stylesheets/foundation-icons/*"]
@@ -35,3 +35,4 @@ array_to_slice.each do |x|
 end
 #array_to_slice.delete_if {|score| score[-3] != "." } 
 Rails.application.config.assets.precompile += array_to_slice
+
