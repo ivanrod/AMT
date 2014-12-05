@@ -27,11 +27,11 @@ array_to_slice = Dir["app/assets/javascripts/*"]
 array_to_slice.each do |x|
   x.slice! "app/assets/javascripts/"
 end
-array_to_slice.delete_if {|score| score != "." } 
+array_to_slice.delete_if {|score| score[-3] != "." } 
 Rails.application.config.assets.precompile += array_to_slice
 array_to_slice = Dir["app/assets/stylesheets/*"]
 array_to_slice.each do |x|
   x.slice! "app/assets/stylesheets/"
 end
-array_to_slice.delete_if {|score| score != "." } 
+array_to_slice.delete_if {|score| score[-3] != "." } 
 Rails.application.config.assets.precompile += array_to_slice
