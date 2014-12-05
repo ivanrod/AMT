@@ -40,6 +40,9 @@ class User < ActiveRecord::Base
 				end
 			end
 		end
+		if next_deadline != nil
+			next_deadline = next_deadline.to_date
+		end
 		return next_deadline
 	end
 
