@@ -11,10 +11,10 @@
 
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", :defer => "defer" %>
-    <%= javascript_include_tag asset_path(params[:controller]), :defer => "defer" %>
+    <%= javascript_include_tag helper.asset_path(params[:controller]), :defer => "defer" %>
     <% if defined?(@specific_js) != nil %>
       <% @specific_js.each do |specific| %>
-      <%= javascript_include_tag (helper.asset_path(specific) || ''), :defer => "defer" %>
+      <%= javascript_include_tag (asset_path(specific) || ''), :defer => "defer" %>
       <% end %>
     <% end %>
     <%= csrf_meta_tags %>
