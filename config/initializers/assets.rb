@@ -5,7 +5,7 @@ Rails.application.config.assets.precompile += ["highcharts/all_courses.js", "ven
 #Foundation Icons
 array_to_slice = Dir["app/assets/stylesheets/foundation-icons/*"]
 array_to_slice.each do |x|
-  x.slice! "app/assets/stylesheets/"
+  x.slice! "app/assets/stylesheets/foundation-icons/"
 end
 
 Rails.application.config.assets.precompile += array_to_slice
