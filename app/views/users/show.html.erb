@@ -9,7 +9,12 @@
 	  </div>
 	</div>
 	  <ul>
-	     <li><b>E-mail:</b> <%= current_user.email %></li> 
+	     <li><b>E-mail:</b> <%= current_user.email %></li>
+	     <li><b>Plataformas preferidas:</b>
+	     	<% current_user.get_all_courses_platform_percent.each do |key, value| %>
+	     	<%= key %>: <%= value %>,
+	     	<% end %>
+	     </li> 
 	  </ul>
 	<div class="large-offset-4">
 		<div id="submit-btn" class="large-2 button">Guardar</div>

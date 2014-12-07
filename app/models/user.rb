@@ -72,6 +72,18 @@ class User < ActiveRecord::Base
 		return course_hash
 	end
 
+	def get_all_courses_platform_percent
+		platforms = {}
+		courses.each do |course|
+			if platforms.has_key?(course.platform)
+				platforms[course.platform] += 1
+			else
+				platforms[course.platform] = 1
+			end
+		end
+		return platforms
+	end	
+
 	#validates :name, presence: true
 	#validates :name, length: { maximum: 25 }
 end
