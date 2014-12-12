@@ -65,10 +65,10 @@ class User < ActiveRecord::Base
 	end
 
 	#gets course with calendar format
-	def calendar_course(calendar_course)
-		course_hash = {"title" => calendar_course.name, 
-				"start" => calendar_course.start_date, 
-				"end" => calendar_course.end_date}
+	def calendar_course(course)
+		course_hash = {"title" => course.name + " (" + course.estimated_hours.to_s + "h/semana)", 
+				"start" => course.start_date, 
+				"end" => course.end_date}
 		return course_hash
 	end
 
