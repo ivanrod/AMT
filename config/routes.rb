@@ -26,6 +26,8 @@ Amt::Application.routes.draw do
 
   get 'all_courses' => "courses#all_courses"
 
+  get 'tools' => "tools#index"
+
   post 'add_time' => "tasks#add_time"
 
   post 'setChart' => "tasks#set_chart"

@@ -59,10 +59,10 @@
             <i class="fi-info"></i>
             <label>Info</label>
           </a>
-          <a class="item">
+          <%= link_to tools_path, :class => "item" do %>
             <i class="fi-wrench"></i>
             <label>Herramientas</label>
-          </a>
+          <% end %>
           <%= link_to weeklyplan_path, :class => "item" do %>
             <i class="fi-list-bullet"></i>
             <label>Programación semanal</label>
