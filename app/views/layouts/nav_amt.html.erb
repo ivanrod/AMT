@@ -30,7 +30,9 @@
         <nav class="tab-bar">
         <div class="middle tab-bar-section"><%= link_to("AMT", root_path) %></div>
         <section class="right-small">
-          <i class="right-off-canvas-toggle fi-torso"></i>
+          <a href="#" class="right-off-canvas-toggle">
+           <i class="fi-torso account-icon"></i>
+          </a>
         </section>
       </nav>
       
@@ -55,18 +57,19 @@
             <i class="fi-graph-pie"></i>
             <label>Mis cursos</label>
             <% end %>
-          <a class="item">
-            <i class="fi-info"></i>
-            <label>Info</label>
-          </a>
           <%= link_to tools_path, :class => "item" do %>
             <i class="fi-wrench"></i>
             <label>Herramientas</label>
           <% end %>
           <%= link_to weeklyplan_path, :class => "item" do %>
             <i class="fi-list-bullet"></i>
-            <label>Programación semanal</label>
+            <label>Programación</label>
+            <label>semanal</label>
           <% end %>
+          <a class="item">
+            <i class="fi-info"></i>
+            <label>Info</label>
+          </a>
 
         </nav>
 
