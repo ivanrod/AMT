@@ -3,30 +3,40 @@ Amt::Application.routes.draw do
   resources :authentications
 
   #devise_for :users
+  root 'welcome#index'
 
   devise_for :users, :controllers => {:registrations => 'users/registrations', :omniauth_callbacks => "users/omniauth_callbacks"}
 
   get '/auth/:provider/callback' => 'authentications#create'
 
+  #Coursera routes
   get 'coursera/:coursera_id/new' => 'courseras#new', as: 'coursera'
 
+  #User routes
   get 'myProfile' => 'users#show'
 
   patch 'myProfile' => 'users#edit_image'
+
+  #Planification routes
 
   get 'weeklyplan' => 'planification#weekly'
 
   post 'getdeadlines' => 'planification#get_deadlines'
 
-  root 'welcome#index'
-
+  #Courses routes
   get 'dashboard' => 'courses#index'
 
   get 'my_courses' => "courses#my_courses"
 
   get 'all_courses' => "courses#all_courses"
 
+  #Tools routes
+
   get 'tools' => "tools#index"
+
+  get 'pomodoro' => "tools#pomodoro"
+
+  #Tasks routes
 
   post 'add_time' => "tasks#add_time"
 
