@@ -8,6 +8,11 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= stylesheet_link_tag    params[:controller] %>
+    <% if defined?(@specific_css) != nil %>
+      <% @specific_css.each do |specific| %>
+      <%= stylesheet_link_tag (specific || '') %>
+      <% end %>
+    <% end %>
 
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", :defer => "defer" %>

@@ -36,3 +36,5 @@ end
 #array_to_slice.delete_if {|score| score[-3] != "." } 
 Rails.application.config.assets.precompile += array_to_slice
 
+#Tools
+Rails.application.config.assets.precompile += [ "tools/pomodoro.js" ]
