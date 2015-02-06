@@ -38,3 +38,4 @@ Rails.application.config.assets.precompile += array_to_slice
 
 #Tools
 Rails.application.config.assets.precompile += [ "tools/pomodoro.js" ]
+Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
